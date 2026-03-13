@@ -90,18 +90,14 @@ export function Navigation() {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="relative px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="relative px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
                 >
                   {link.name}
-                  <motion.span
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600"
-                    whileHover={{ width: '60%' }}
-                    transition={{ duration: 0.3 }}
-                  />
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
                 </motion.a>
               ))}
             </div>
